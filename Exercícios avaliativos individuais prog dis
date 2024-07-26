@@ -1,0 +1,73 @@
+1) Aqui está a função em JavaScript que retorna a saudação concatenada com o nome:
+
+javascript
+function cumprimentar(nome) {
+  return "Bom dia " + nome + ", seja bem vindo(a)";
+}
+
+console.log(cumprimentar("João")); // Saída: Bom dia João, seja bem vindo
+
+
+2) Para retornar o mês correspondente ao número informado, você pode fazer assim:
+
+javascript
+function obterMes(numero) {
+  const meses = [
+    "janeiro", "fevereiro", "março", "abril",
+    "maio", "junho", "julho", "agosto",
+    "setembro", "outubro", "novembro", "dezembro"
+  ];
+
+  return meses[numero - 1];
+}
+
+console.log(obterMes(4)); // Saída: abril
+
+
+3) Para verificar se os valores são números e compará-los, você pode usar esta função:
+
+javascript
+function compararNumeros(valor1, valor2) {
+  if (typeof valor1 === 'number' && typeof valor2 === 'number') {
+    if (valor1 >= valor2) {
+      return "O primeiro valor é maior ou igual ao segundo valor";
+    } else {
+      return "O primeiro valor é menor que o segundo valor";
+    }
+  } else {
+    return "Pelo menos um dos valores não é um número";
+  }
+}
+
+console.log(compararNumeros(10, 5)); // Saída: O primeiro valor é maior ou igual ao segundo valor
+
+
+4) Aqui está a função para calcular o salário líquido considerando horas extras e faltas:
+
+javascript
+function calcularSalario(salarioBase, horasExtras, faltas) {
+  const valorHora = salarioBase / 176;
+  const valorHoraExtra = valorHora * 1.5;
+  
+  const salarioBruto = salarioBase + (horasExtras * valorHoraExtra) - (faltas * valorHora);
+  
+  const totalHorasExtras = horasExtras * valorHoraExtra;
+  const totalFaltas = faltas * valorHora;
+
+  return `O salário é R$ ${salarioBase.toFixed(2)}
+O salário líquido é R$ ${salarioBruto.toFixed(2)}
+Total em horas extras: R$ ${totalHorasExtras.toFixed(2)}
+Total descontado em faltas: R$ ${totalFaltas.toFixed(2)}`;
+}
+
+console.log(calcularSalario(10000, 20, 2)); // Exemplo de saída com os valores fornecidos
+
+
+5) Para retornar um novo array com o primeiro e último elemento do array fornecido, você pode fazer assim:
+
+javascript
+function receberPrimeiroEUltimo(array) {
+  return [array[0], array[array.length - 1]];
+}
+
+console.log(receberPrimeiroEUltimo([2,4,67,8,9,90,0,"dia","hoje","tio","yellow","ui"])); // Saída: [2, "ui"]
